@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  devise_scope :user do
+    get 'login' => 'devise/sessions#new'
+    post 'login' => 'devise/sessions#create'
+    delete 'destroy' => 'devise/sessions#destroy',as: :current_user_destroy
+  end
   
-  root 'signup#index'
+  root 'posts#index'
   
   resources :signup ,only: [:index] do
     collection do
@@ -14,4 +20,7 @@ Rails.application.routes.draw do
       get 'done'
     end
   end
+
+  resources :posts
+
 end
