@@ -43,10 +43,14 @@
       .messages
         .message__title
           メッセージ一覧
-        .message__title__list
-          - @messages.each do |message|
-            - if @messages.empty?
-              .message__title__list__none
-                メッセージはまだありません
-            - else
-              = message.message
+          .message__title__list
+            - @messages.each do |message|
+              - if @messages.empty?
+                .message__title__list__none
+                  メッセージはまだありません
+              - else
+                .message__title__nickname
+                  = message.user.nickname
+                  %span :
+                .message__title__message
+                  = message.message

@@ -163,7 +163,6 @@ pre {
 .show-form__title {
   padding-top: 20px;
   padding-left: 40px;
-  padding-right: 40px;
   text-align: left;
   &__text {
     font-size: 16px;
@@ -228,4 +227,28 @@ pre {
   transition: 0.3s ease-out;
   display: block;
   color: #fff;
+}
+
+
+.messages {
+  background-color: aquamarine;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding-bottom: 5px;
+  border: solid black;
+  border-radius: 10px;
+}
+
+.message__title__list {
+  background-color: azure;
+  margin: 10px;
+  border: solid black;
+}
+
+.message__title__nickname {
+  float: left;
+}
+
+.message__title__message {
+  text-align: left;
 }
