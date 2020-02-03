@@ -39,6 +39,14 @@
       = form_with(model: [@posts, @message], local: true) do |f|
         = f.text_area :message, placeholder: "コメントする"
         = f.submit "SEND"
-      -# .show-form__title
-      -#   .show-form__title__text
-          -# = link_to 'メッセージを送る', new_post_message_path(@posts.id)
+
+      .messages
+        .message__title
+          メッセージ一覧
+        .message__title__list
+          - @messages.each do |message|
+            - if @messages.empty?
+              .message__title__list__none
+                メッセージはまだありません
+            - else
+              = message.message
