@@ -19,6 +19,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @posts = Post.find(params[:id])
+    @image = Image.find(params[:id])
+    @message = Message.new
+    @messages = @posts.messages.includes(:user)
+  end
+
   private
 
   def post_params

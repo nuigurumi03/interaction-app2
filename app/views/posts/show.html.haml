@@ -1,0 +1,56 @@
+.main
+  %selection.main-show
+    %h2.post-show
+      = @posts.title
+    .show-form
+      .show-form__upload
+        = image_tag @image.image.to_s
+
+      .show-form__title
+        .show-form__title__text 
+          詳しい内容
+        .show-form__title__detail
+        = @posts.detail
+
+      .show-form__title
+        .show-form__title__text 
+          都道府県
+        .show-form__title__prefecture
+          = @posts.prefecture.name
+
+      .show-form__title
+        .show-form__title__text
+          市区町村
+        .show-form__title__city
+          = @posts.city
+
+      .show-form__title
+        .show-form__title__text
+          番地
+        .show-form__title__house
+          = @posts.house_code
+
+      .show-form__title
+        .show-form__title__text
+          建物名
+        .show-form__title__build
+          = @posts.build_name
+
+      = form_with(model: [@posts, @message], local: true) do |f|
+        = f.text_area :message, placeholder: "コメントする"
+        = f.submit "SEND"
+
+      .messages
+        .message__title
+          メッセージ一覧
+          .message__title__list
+            - @messages.each do |message|
+              - if @messages.empty?
+                .message__title__list__none
+                  メッセージはまだありません
+              - else
+                .message__title__nickname
+                  = message.user.nickname
+                  %span :
+                .message__title__message
+                  = message.message
