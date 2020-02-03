@@ -68,3 +68,11 @@ gem "jquery-rails"
 gem 'active_hash'
 gem 'dotenv-rails'
 gem 'kaminari', '~> 0.17.0'
+
+group :development, :test do
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
+end
