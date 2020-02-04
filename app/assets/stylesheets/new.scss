@@ -229,6 +229,19 @@ pre {
   color: #fff;
 }
 
+.massage-area {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.message-btn {
+  width: 500px;
+  height: 50px;
+  color: wheat;
+  background-color: red;
+  margin: 0 auto;
+}
+
 
 .messages {
   background-color: aquamarine;
@@ -237,12 +250,20 @@ pre {
   padding-bottom: 5px;
   border: solid black;
   border-radius: 10px;
+  margin-top: 20px;
+}
+
+.message__title {
+  padding-top: 10px;
 }
 
 .message__title__list {
+  height: 100px;
   background-color: azure;
+  padding: 10px;
   margin: 10px;
   border: solid black;
+  overflow: scroll;
 }
 
 .message__title__nickname {
