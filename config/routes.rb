@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     post 'login' => 'devise/sessions#create'
     delete 'destroy' => 'devise/sessions#destroy',as: :current_user_destroy
   end
+
+  resources :users
   
   root 'posts#index'
   
