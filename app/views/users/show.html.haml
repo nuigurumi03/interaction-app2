@@ -1,6 +1,34 @@
 .wrapper
   = render "/layouts/header"
   .main
-    %selection.main-show
-      %h2.post-show
+    %selection.user-show
+      %h2.post-show__nickname
         = @user.nickname
+      .user-show
+        = image_tag 'default-icon.png'
+      .user-show
+        = @user.profile.family_name_kana
+      .user-show
+        = @user.profile.personal_name_kana
+      .user-show
+        = @user.profile.family_name
+      .user-show
+        = @user.profile.personal_name
+      .user-show
+        = @user.profile.birthyear
+      .user-show
+        = @user.profile.birthmonth
+      .user-show
+        = @user.profile.birthday
+      .user-show
+        = @user.profile.tel
+      .user-show
+        = @user.profile.postal_code
+      .user-show
+        = @user.profile.prefecture.name
+      .user-show
+        = @user.profile.city
+      .user-show
+        = @user.profile.house_code
+      .user-show
+        = @user.profile.bulid_name
