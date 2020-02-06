@@ -2,6 +2,7 @@
   - if user_signed_in?
     .header-inner
       .header-inner__logo
+      = link_to root_path, class: "header-inner__logo" do
         Interaction
       .header-inner__search
         = form_for to_s do |f|
@@ -10,7 +11,7 @@
     .header-list
       .header-list__right
         .container
-          %a.bnt-massage{:href => "/signup"}
+          = link_to user_path(current_user.id), class: "bnt-massage" do
             Mypage
             %span マイページ
           %a.bnt-massage{:href => "/posts/new"}
