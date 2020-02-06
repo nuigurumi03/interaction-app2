@@ -1,34 +1,55 @@
 .wrapper
   = render "/layouts/header"
   .main
-    %selection.user-show
-      %h2.post-show__nickname
-        = @user.nickname
+    .user
       .user-show
-        = image_tag 'default-icon.png'
-      .user-show
-        = @user.profile.family_name_kana
-      .user-show
-        = @user.profile.personal_name_kana
-      .user-show
-        = @user.profile.family_name
-      .user-show
-        = @user.profile.personal_name
-      .user-show
-        = @user.profile.birthyear
-      .user-show
-        = @user.profile.birthmonth
-      .user-show
-        = @user.profile.birthday
-      .user-show
-        = @user.profile.tel
-      .user-show
-        = @user.profile.postal_code
-      .user-show
-        = @user.profile.prefecture.name
-      .user-show
-        = @user.profile.city
-      .user-show
-        = @user.profile.house_code
-      .user-show
-        = @user.profile.bulid_name
+        .user-show__icon
+          .user-show__icon__image
+            = image_tag 'default-icon.png'
+        .user-show__list
+          ニックネーム
+          .user-show__list__title
+            = @user.nickname
+        .user-show__list
+          お名前
+          %ul.user-show__list__name
+            %li.user-show__list__name__data
+              = @user.profile.family_name_kana
+            %li.user-show__list__name__data
+              = @user.profile.personal_name_kana
+          %ul.user-show__list__name
+            %li.user-show__list__name__data
+              = @user.profile.family_name
+            %li.user-show__list__name__data
+              = @user.profile.personal_name
+        .user-show__list
+          生年月日
+          %ul.user-show__list__name
+            %li.user-show__list__name__data
+              = @user.profile.birthyear
+              年
+            %li.user-show__list__name__data
+              = @user.profile.birthmonth
+              月
+            %li.user-show__list__name__data
+              = @user.profile.birthday
+              日
+        .user-show__list
+          携帯電話番号
+          .user-show__list__title
+            = @user.profile.tel
+        .user-show__list
+          住所
+          .user-show__list__title
+            .user-show__list__name__data
+              = @user.profile.postal_code
+            %ul.user-show__list__name
+              %li.user-show__list__name__data
+                = @user.profile.prefecture.name
+              %li.user-show__list__name__data
+                = @user.profile.city
+            %ul.user-show__list__name
+              %li.user-show__list__name__data
+                = @user.profile.house_code
+              %li.user-show__list__name__data
+                = @user.profile.bulid_name

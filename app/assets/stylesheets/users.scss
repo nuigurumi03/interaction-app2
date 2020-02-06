@@ -1,3 +1,28 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user {
+  background-color: skyblue;
+  height: 100vh;
+  .user-show {
+    width: 650px;
+    margin: 0 auto;
+    background-color: turquoise;
+    padding: 40px;
+    margin-top: 40px;
+    &__list {
+      padding-top: 10px;
+      font-size: 20px;
+      &__title {
+        padding-bottom: 10px;
+          &__data {
+            margin-right: 5px;
+          }
+        }
+        &__name {
+          display: flex;
+      }
+    }
+  }
+}
