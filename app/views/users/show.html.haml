@@ -1,2 +1,6 @@
 .wrapper
   = render "/layouts/header"
+  .main
+    %selection.main-show
+      %h2.post-show
+        = @user.nickname
