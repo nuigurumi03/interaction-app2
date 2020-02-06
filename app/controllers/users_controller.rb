@@ -6,4 +6,7 @@ class UsersController < ApplicationController
     # @icon = Icon.find(params[:id])
   end
 
+  def edit
+  end
+
 end
