@@ -1,4 +1,10 @@
-= form_for @profile, url: sms_authentication_signup_index_path,method: :post do |f|
-  = label :nickname, '携帯電話の番号'
-  = f.text_field :tel, placeholder: '携帯電話の番号を入力'
-  = f.submit '次へ進む'
+.wrapper
+  = render "/layouts/signup-header-step2"
+  .phone-number
+    .phone-number__form
+      = form_for @profile, url: sms_authentication_signup_index_path,method: :post do |f|
+        = label :nickname, '携帯電話の番号', class: "phone-number__form__title"
+        %br
+        = f.text_field :tel, placeholder: '携帯電話の番号を入力', class: "phone-number__form__field"
+        %br
+        = f.submit '次へ進む', class:"phone-number__form__btn"

@@ -1,3 +1,239 @@
 // Place all the styles related to the signup controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.signup-header {
+  height: 150px;
+  width: 100vw;
+  vertical-align: top;
+  text-align: center;
+  background-color: turquoise;
+  &__wrapper {
+    &__list {
+      min-width: 60px;
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      font-size: 40px;
+      &__step {
+        margin: 0 40px 0 0;
+        min-width: 60px;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        font-size: 20px;
+        &__icon {
+          width: 12px;
+          height: 12px;
+          bottom:0;
+          top: 40px;
+          left:23px;
+          margin: 8px auto 0;
+          background: #ccc;
+          border-radius: 50%;
+          background-color: black;
+          position:absolute;
+          z-index: 10;
+        }
+        &__icon-red {
+          width: 12px;
+          height: 12px;
+          bottom:0;
+          top: 40px;
+          left:23px;
+          margin: 8px auto 0;
+          background: #ccc;
+          border-radius: 50%;
+          background-color: red;
+          position:absolute;
+          z-index: 10;
+        }
+        &__bar {
+          width: 100px;
+          border: solid gray;
+          position: absolute;
+          top: 50px;
+          left: 30px;
+        }
+        &__bar-red {
+          width: 100px;
+          border: solid red;
+          position: absolute;
+          top: 50px;
+          left: 30px;
+        }
+      }
+    }
+  }
+}
+// header(step0)
+
+.signup-index {
+  background-color: turquoise;
+  height: 100vh;
+  position: relative;
+  &__wrapper {
+    background-color: skyblue;
+    width: 650px;
+    height: 250px;
+    padding: 40px;
+    margin: auto;
+    text-align: center;
+    &__content {
+      padding-top: 20px;
+      font-size: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+    &__link {
+      text-align: center;
+      line-height: 50px;
+      width: 250px;
+      height: 50px;
+      color: white;
+      background-color: red;
+      position: absolute;
+      top: 150px;
+      left: 600px;
+    }
+  }
+}
+
+.signup-container {
+  background-color: turquoise;
+  height: 100vh;
+  .signup-wrapper {
+    background-color: skyblue;
+    width: 650px;
+    padding: 40px;
+    margin: auto;
+    .registration-title {
+      font-size: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .registration-form {
+      padding-top: 20px;
+      &__container {
+        padding: 10px;
+        &__birthday {
+          padding-top: 10px;
+        }
+        &__title {
+          padding: 5px;
+        }
+      }
+    }
+  }
+}
+
+.phone-number {
+  background-color: turquoise;
+  height: 100vh;
+  &__form {
+    background-color: skyblue;
+    width: 650px;
+    padding: 40px;
+    margin: auto;
+    text-align: center;
+    &__title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    &__field {
+      height: 30px;
+      width: 250px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    &__btn {
+      width: 250px;
+      height: 50px;
+      color: wheat;
+      background-color: red;
+      margin: 20 auto;
+    }
+  }
+}
+
+.signup-address {
+  background-color: turquoise;
+  height: 100vh;
+  &__wrapper {
+    background-color: skyblue;
+    width: 500px;
+    padding-top: 40px;
+    padding-right: 60px;
+    padding-left: 60px;
+    padding-bottom: 90px;
+    margin: auto;
+    &__title {
+      font-size: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+    &__form {
+      padding-top: 20px;
+      position: relative;
+      &__list {
+        &__title {
+          padding-bottom: 10px;
+        }
+        &__field {
+          margin-bottom: 20px;
+        }
+        &__city {
+          padding-top: 10px;
+          margin-bottom: 10px;
+        }
+      }
+      .address__form__btn {
+        text-align: center;
+        width: 250px;
+        height: 50px;
+        color: wheat;
+        background-color: red;
+        position: absolute;
+        right: 130px;
+      }
+    }
+  }
+}
+
+.signup-done {
+  background-color: turquoise;
+  height: 100vh;
+  &__wrapper {
+    background-color: skyblue;
+    width: 500px;
+    padding-top: 40px;
+    padding-right: 60px;
+    padding-left: 60px;
+    padding-bottom: 90px;
+    margin: auto;
+    &__title {
+      font-size: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+    &__content {
+      padding-top: 20px;
+      position: relative;
+      &__comment {
+        font-size: 15px;
+        text-align: center;
+        &__btn {
+        text-align: center;
+        line-height: 50px;
+        width: 250px;
+        height: 50px;
+        color: white;
+        background-color: red;
+        position: absolute;
+        right: 130px;
+        top: 70px;
+        }
+      }
+    }
+  }
+}

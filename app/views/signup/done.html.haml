@@ -1,9 +1,12 @@
-.main-container4
-  .header4
-    %h2 会員登録完了
-  .main-contents4
-    .comment
-      %span ありがとうございます。
-      %br 会員登録が完了しました。
-      = link_to posts_path, data: {"turbolinks" => false}, class:"comment__start-btn" do
-        interactionをはじめる
+.wrapper
+  = render "/layouts/signup-header-step4"
+  .signup-done
+    .signup-done__wrapper
+      .signup-done__wrapper__title
+        会員登録完了
+      .signup-done__wrapper__content
+        .signup-done__wrapper__content__comment
+          %span ありがとうございます。
+          %br 会員登録が完了しました。
+          = link_to root_path, data: {"turbolinks" => false}, class:"signup-done__wrapper__content__comment__btn" do
+            interactionをはじめる
