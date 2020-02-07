@@ -128,6 +128,7 @@ class SignupController < ApplicationController
     if @profile.save && @user.save
       reset_session
       session[:id] = @user.id
+      sign_in User.find(session[:id])
       redirect_to done_signup_index_path
       return 
     else
