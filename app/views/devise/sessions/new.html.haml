@@ -1,0 +1,22 @@
+.login
+  .login-wrapper
+    .login-wrapper__logo
+      Interaction
+      .login-wrapper__logo__title
+        にログイン
+    .login-wrapper__content
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .login-wrapper__content__list
+          = f.label :メールアドレス
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+        .login-wrapper__content__list
+          = f.label :パスワード
+          %br/
+          = f.password_field :password, autocomplete: "current-password"
+        - if devise_mapping.rememberable?
+          = f.submit "Log in", class: "login-wrapper__content__login"
+      .teach
+        アカウントをお持ちでない方はこちらをクリック
+      = link_to signup_index_path, class: "teach-signup" do
+        Signup
