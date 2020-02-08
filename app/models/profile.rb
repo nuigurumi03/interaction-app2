@@ -1,8 +1,9 @@
 class Profile < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :prefecture
 
+  belongs_to_active_hash :prefecture
   belongs_to :user
+
   POSTAL_CODE_VALID = /\A\d{3}-\d{4}\z/i
 
   # registration
