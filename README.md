@@ -1,19 +1,19 @@
-# README
-
-## usersテーブル
+# interaction
+## DB設計
+### usersテーブル
 | column              | Type   | Options     |
 | ------------------ | ------ | ----------- |
 | nickname           | string | null: false |
 | email              | string | null: false |
 | encrypted_password | string | null: false |
 
-### Association
+#### Association
 - has_one :profile, dependent: :destroy
 - has_many :posts
 - has_many :messages
 - has_many :icons
 
-## profilesテーブル
+### profilesテーブル
 | column             | Type    | Options           |
 | ------------------ | ------- | ----------------- |
 | user_id            | integer | foreign_key: true |
@@ -31,20 +31,20 @@
 | house_code         | string  | null: false       |
 | bulid_name         | string  | null: false       |
 
-### Association
+#### Association
 - belongs_to_active_hash :prefecture
 - belongs_to :user
 
-## addressesテーブル
+### addressesテーブル
 | column        | Type     | Options |
 | ------------- | -------- | ------- |
 | prefecture_id | integher |         |
 | city          | string   |         |
 
-### Association
+#### Association
 - belongs_to_active_hash :prefecture
 
-## postsテーブル
+### postsテーブル
 | column        | Type   | Options           |
 | ------------- | ------ | ----------------- |
 | user_id       | intger | foreign_key: true |
@@ -55,40 +55,40 @@
 | house_code    | string |                   |
 | build_name    | string |                   |
 
-### Association
+#### Association
 - belongs_to_active_hash :prefecture
 - belongs_to :user
 - has_many :images
 - has_many :messages
 
-## imagesテーブル
+### imagesテーブル
 | column  | Type   | Options           |
 | ------- | ------ | ----------------- |
 | image   | string | null: false       |
 | post_id | intger | foreign_key: true |
 
 
-### Association
+#### Association
 - belongs_to :post
 
-## messagesテーブル
+### messagesテーブル
 | column  | Type   | Options           |
 | ------- | ------ | ----------------- |
 | user_id | intger | foreign_key: true |
 | post_id | intger | foreign_key: true |
 | message | text   |                   |
 
-### Association
+#### Association
 - belongs_to :post
 - belongs_to :user
 
-## iconsテーブル
+### iconsテーブル
 | columu  | Type   | Options           |
 | ------- | ------ | ----------------- |
 | user_id | intger | foreign_key: true |
 | image   | string |                   |
 
-### Association
+#### Association
 - belongs_to :user
 
 This README would normally document whatever steps are necessary to get the
