@@ -7,6 +7,13 @@
 ## インストールの手順
 ### $ git clone https://github.com/nuigurumi03/interaction-app2.git
 
+## 開発環境
+- Ruby on Rails
+- ruby
+- haml
+- sass
+- JavaScript
+
 ## DB設計
 ### usersテーブル
 | column              | Type   | Options     |
