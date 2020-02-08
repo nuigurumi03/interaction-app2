@@ -1,10 +1,3 @@
-/*
--------------------------------------
-------------------------------------- The image changue  every 10 Secons
--------------------------------------
--------------------------------------
-*/
-
 var Cont = 0;
 function inic(){
 if(Cont % 2 != 0){
@@ -23,7 +16,7 @@ document.querySelector('.img_1').className = 'img_1 img_d_n';
   setTimeout(function (){
 document.querySelector('.img_2').style.opacity = '0.2';  
   document.querySelectorAll('.img_2')[1].style.opacity = '1';
- 
+
   },600);
     Cont++;
 }else{
@@ -58,4 +51,3 @@ setTimeout(function(){
 }
 
 setInterval(function(){ inic() }, 10000);
- 

@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   devise_scope :user do
-    get 'login' => 'devise/sessions#new'
-    post 'login' => 'devise/sessions#create'
-    delete 'destroy' => 'devise/sessions#destroy',as: :current_user_destroy
+    get 'login', to: 'devise/sessions#new'
+    post 'login', to: 'devise/sessions#create'
+    delete 'destroy', to: 'devise/sessions#destroy',as: :current_user_destroy
   end
 
   resources :users
@@ -14,11 +14,11 @@ Rails.application.routes.draw do
   resources :signup ,only: [:index] do
     collection do
       get 'registration'
-      post 'registration' => 'signup#first_validation'
+      post 'registration', to: 'signup#first_validation'
       get 'sms_authentication'
-      post 'sms_authentication' => 'signup#sms_check'
+      post 'sms_authentication', to: 'signup#sms_check'
       get 'address'
-      post 'address' => 'signup#second_validation'
+      post 'address', to: 'signup#second_validation'
       get 'done'
     end
   end
