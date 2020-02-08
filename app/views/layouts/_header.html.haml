@@ -2,8 +2,8 @@
   - if user_signed_in?
     .header-inner
       .header-inner__logo
-      = link_to root_path, class: "header-inner__logo" do
-        Interaction
+        = link_to root_path, class: "header-inner__logo" do
+          Interaction
       .header-inner__search
         = form_for to_s do |f|
           = f.search_field :title, placeholder:"何かお探しですか？", id:"field"
