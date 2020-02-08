@@ -10,7 +10,7 @@ body {
 // 投稿画面
 
 .main {
-  background-color: skyblue;
+  background-color: turquoise;
   padding-top: 80px;
   padding-bottom: 80px;
   height: calc(100vw-100px);
@@ -18,7 +18,8 @@ body {
     width: 690px;
     margin: 0 auto;
     display: block;
-    background-color: mediumturquoise;
+    margin-top: 40px;
+    background-color: skyblue;;
     opacity: 0.8;
     .post-block {
       padding: 32px 16px;
