@@ -4,6 +4,9 @@
 ## アプリケーションのURL
 ### http://52.199.56.194/
 
+## インストールの手順
+### $ git clone https://github.com/nuigurumi03/interaction-app2.git
+
 ## DB設計
 ### usersテーブル
 | column              | Type   | Options     |
