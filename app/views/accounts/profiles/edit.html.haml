@@ -1,136 +1,154 @@
 .registration-form
-  = form_with(model: @profile, url: account_profile_path, method: :put, local: true) do |f|
+  -# = form_with(model: @profile, url: account_profile_path, method: :put, local: true) do |f|
+  = form_for @user, url: account_profile_path, method: :put do |f|
     .registration-form__container
-      .signup-form__container__title
-        = label :name, 'お名前(全角)', class: 'signup-label'
       .registration-form__container__title
-        = f.text_field :family_name
-        = f.text_field :personal_name
+        = label :nickname, 'ニックネーム', class: 'signup-label'
+      = f.text_field :nickname, placeholder: '例）太郎'
+    .registration-form__container
       .registration-form__container__title
-        = f.text_field :family_name_kana
-        = f.text_field :personal_name_kana
-
-    .phone
-      = f.label :tel, "電話番号"
-      %br/
-      = f.text_field :tel
-
-    .l-regist-wholeform__mainform__input__info__birthday
-      = f.label :birthday, "生年月日"
-      %span.form-require 必須
-      %br/
+        = label :email, 'メールアドレス'
+      = f.text_field :email, placeholder: 'PC・携帯どちらでも可'
+    
+    
+    = fields_for @profile, url: account_profile_path, method: :put do |p|
+    
+    
+    
+    
       .registration-form__container
-        .registration-form__container__birthday
-          = f.select :birthyear,[["--", ""],
-                            ["2012", 2012],
-                            ["2011", 2011],
-                            ["2010", 2010],
-                            ["2009", 2009],
-                            ["2008", 2008],
-                            ["2007", 2007],
-                            ["2006", 2006],
-                            ["2005", 2005],
-                            ["2004", 2004],
-                            ["2003", 2003],
-                            ["2002", 2002],
-                            ["2001", 2001],
-                            ["2000", 2000],
-                            ["1999", 1999],
-                            ["1998", 1998],
-                            ["1997", 1997],
-                            ["1996", 1996],
-                            ["1995", 1995],
-                            ["1994", 1994],
-                            ["1993", 1993],
-                            ["1992", 1992],
-                            ["1991", 1991],
-                            ["1990", 1990],
-                            ["1989", 1989],
-                            ["1988", 1988],
-                            ]
-          %span 
-          年
-        .registration-form__container__birthday
-          = f.select :birthmonth,[["--", ""],
-                          ["1", 1],
-                          ["2", 2],
-                          ["3", 3],
-                          ["4", 4],
-                          ["5", 5],
-                          ["6", 6],
-                          ["7", 7],
-                          ["8", 8],
-                          ["9", 9],
-                          ["10", 10],
-                          ["11", 11],
-                          ["12", 12],
-                          ]
-          %span
-          月
-        .registration-form__container__birthday
-          = f.select :birthday,[["--", ""],
-                          ["1", 1],
-                          ["2", 2],
-                          ["3", 3],
-                          ["4", 4],
-                          ["5", 5],
-                          ["6", 6],
-                          ["7", 7],
-                          ["8", 8],
-                          ["9", 9],
-                          ["10", 10],
-                          ["11", 11],
-                          ["12", 12],
-                          ["13", 13],
-                          ["14", 14],
-                          ["15", 15],
-                          ["16", 16],
-                          ["17", 17],
-                          ["18", 18],
-                          ["19", 19],
-                          ["20", 20],
-                          ["21", 21],
-                          ["22", 22],
-                          ["23", 23],
-                          ["24", 24],
-                          ["25", 25],
-                          ["26", 26],
-                          ["27", 27],
-                          ["28", 28],
-                          ["29", 29],
-                          ["30", 30],
-                          ["31", 31],
-                          ]
-          %span
-          日
+        .signup-form__container__title
+          = label :name, 'お名前(全角)', class: 'signup-label'
+        .registration-form__container__title
+          = p.text_field :family_name
+          = p.text_field :personal_name
+        .registration-form__container__title
+          = p.text_field :family_name_kana
+          = p.text_field :personal_name_kana
 
-    .signup-address__wrapper__form__list
-      .signup-address__wrapper__form__list__title
-        = f.label :postal_code, "郵便番号"
-        %span.form-required
-          必須
-      = f.text_field :postal_code, class: "signup-address__wrapper__form__list__field", placeholder:"例）１２３４５６７"
-
-      .signup-address__wrapper__form__list__title
-        = f.label :prefecture_id, "都道府県"
-        %span.form-required
-          必須
-      = f.collection_select :prefecture_id, Prefecture.all, :id, :name, class: "signup-address__wrapper__form__list__select"
       
-      .signup-address__wrapper__form__list__city
-        = f.label :city, "市区町村"
-        %span.form-required
-          必須
-      = f.text_field :city, class: "signup-address__wrapper__form__list__field", placeholder:"例）横浜市緑区"
-      .signup-address__wrapper__form__list__title
-        = f.label :house_code, "番地"
-        %span.form-required
-          必須
-      = f.text_field :house_code, class: "signup-address__wrapper__form__list__field", placeholder:"例）青山1-1-1"
-      .signup-address__wrapper__form__list__title
-        = f.label :bulid_name, "建物名"
-        %span.from-arbitrary
-          任意
-      = f.text_field :bulid_name, class: "signup-address__wrapper__form__list__field", placeholder:"例）柳ビル103"
+
+      .phone
+        = p.label :tel, "電話番号"
+        %br/
+        = p.text_field :tel
+
+      .l-regist-wholeform__mainform__input__info__birthday
+        = p.label :birthday, "生年月日"
+        %span.form-require 必須
+        %br/
+        .registration-form__container
+          .registration-form__container__birthday
+            = p.select :birthyear,[["--", ""],
+                              ["2012", 2012],
+                              ["2011", 2011],
+                              ["2010", 2010],
+                              ["2009", 2009],
+                              ["2008", 2008],
+                              ["2007", 2007],
+                              ["2006", 2006],
+                              ["2005", 2005],
+                              ["2004", 2004],
+                              ["2003", 2003],
+                              ["2002", 2002],
+                              ["2001", 2001],
+                              ["2000", 2000],
+                              ["1999", 1999],
+                              ["1998", 1998],
+                              ["1997", 1997],
+                              ["1996", 1996],
+                              ["1995", 1995],
+                              ["1994", 1994],
+                              ["1993", 1993],
+                              ["1992", 1992],
+                              ["1991", 1991],
+                              ["1990", 1990],
+                              ["1989", 1989],
+                              ["1988", 1988],
+                              ]
+            %span 
+            年
+          .registration-form__container__birthday
+            = p.select :birthmonth,[["--", ""],
+                            ["1", 1],
+                            ["2", 2],
+                            ["3", 3],
+                            ["4", 4],
+                            ["5", 5],
+                            ["6", 6],
+                            ["7", 7],
+                            ["8", 8],
+                            ["9", 9],
+                            ["10", 10],
+                            ["11", 11],
+                            ["12", 12],
+                            ]
+            %span
+            月
+          .registration-form__container__birthday
+            = p.select :birthday,[["--", ""],
+                            ["1", 1],
+                            ["2", 2],
+                            ["3", 3],
+                            ["4", 4],
+                            ["5", 5],
+                            ["6", 6],
+                            ["7", 7],
+                            ["8", 8],
+                            ["9", 9],
+                            ["10", 10],
+                            ["11", 11],
+                            ["12", 12],
+                            ["13", 13],
+                            ["14", 14],
+                            ["15", 15],
+                            ["16", 16],
+                            ["17", 17],
+                            ["18", 18],
+                            ["19", 19],
+                            ["20", 20],
+                            ["21", 21],
+                            ["22", 22],
+                            ["23", 23],
+                            ["24", 24],
+                            ["25", 25],
+                            ["26", 26],
+                            ["27", 27],
+                            ["28", 28],
+                            ["29", 29],
+                            ["30", 30],
+                            ["31", 31],
+                            ]
+            %span
+            日
+
+      .signup-address__wrapper__form__list
+        .signup-address__wrapper__form__list__title
+          = p.label :postal_code, "郵便番号"
+          %span.form-required
+            必須
+        = p.text_field :postal_code, class: "signup-address__wrapper__form__list__field", placeholder:"例）１２３４５６７"
+
+        .signup-address__wrapper__form__list__title
+          = p.label :prefecture_id, "都道府県"
+          %span.form-required
+            必須
+        = p.collection_select :prefecture_id, Prefecture.all, :id, :name, class: "signup-address__wrapper__form__list__select"
+        
+        .signup-address__wrapper__form__list__city
+          = p.label :city, "市区町村"
+          %span.form-required
+            必須
+        = p.text_field :city, class: "signup-address__wrapper__form__list__field", placeholder:"例）横浜市緑区"
+        .signup-address__wrapper__form__list__title
+          = p.label :house_code, "番地"
+          %span.form-required
+            必須
+        = p.text_field :house_code, class: "signup-address__wrapper__form__list__field", placeholder:"例）青山1-1-1"
+        .signup-address__wrapper__form__list__title
+          = p.label :bulid_name, "建物名"
+          %span.from-arbitrary
+            任意
+        = p.text_field :bulid_name, class: "signup-address__wrapper__form__list__field", placeholder:"例）柳ビル103"
 
     = f.submit '次へ進む'
