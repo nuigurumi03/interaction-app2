@@ -1,0 +1,58 @@
+.wrapper
+  = render "/layouts/header"
+  .main
+    .user
+      .user-show
+        .user-show__icon
+          .user-show__icon__image
+            = image_tag 'default-icon.png'
+        .user-show__list
+          ニックネーム
+          .user-show__list__title
+            = current_user.nickname
+        .user-show__list
+          お名前
+          %ul.user-show__list__name
+            %li.user-show__list__name__data
+              = current_user.profile.family_name_kana
+            %li.user-show__list__name__data
+              = current_user.profile.personal_name_kana
+          %ul.user-show__list__name
+            %li.user-show__list__name__data
+              = current_user.profile.family_name
+            %li.user-show__list__name__data
+              = current_user.profile.personal_name
+        .user-show__list
+          生年月日
+          %ul.user-show__list__name
+            %li.user-show__list__name__data
+              = current_user.profile.birthyear
+              年
+            %li.user-show__list__name__data
+              = current_user.profile.birthmonth
+              月
+            %li.user-show__list__name__data
+              = current_user.profile.birthday
+              日
+        .user-show__list
+          携帯電話番号
+          .user-show__list__title
+            = current_user.profile.tel
+        .user-show__list
+          住所
+          .user-show__list__title
+            .user-show__list__name__data
+              = current_user.profile.postal_code
+            %ul.user-show__list__name
+              %li.user-show__list__name__data
+                = current_user.profile.prefecture.name
+              %li.user-show__list__name__data
+                = current_user.profile.city
+            %ul.user-show__list__name
+              %li.user-show__list__name__data
+                = current_user.profile.house_code
+              %li.user-show__list__name__data
+                = current_user.profile.bulid_name
+        .user-show__list
+          = link_to  edit_account_profile_path(current_user.id) do
+            ユーザー編集

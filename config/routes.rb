@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'users/registrations'}
-  get 'users/show', to: 'user#show'
+
+  resources :accounts, only: [:show] do
+    resources :profiles, only: [:edit, :update], module: "accounts"
+  end
+
+  devise_for :users, controllers: {
+    sessions:      'users/sessions',
+    passwords:     'users/passwords',
+    registrations: 'users/registrations'
+  }
+  # get 'users/show', to: 'user#show'
   
 
   devise_scope :user do

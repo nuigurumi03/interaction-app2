@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    # @profile = Profile.find(params[:id])
+    @profile = Profile.find(params[:id])
   end
 
   def update
@@ -25,8 +25,8 @@ class UsersController < ApplicationController
     params.require(:user).permit(:nickname, :email)
   end
 
-  # def profile_params
-  #   params.require(:profile).permit(:birthyear,:birthmonth,:birthday,:family_name,:personal_name,:family_name_kana,:personal_name_kana,:postal_code,:prefecture_id,:city,:tel,:house_code,:bulid_name)
-  # end
+  def profile_params
+    params.require(:profile).permit(:birthyear,:birthmonth,:birthday,:family_name,:personal_name,:family_name_kana,:personal_name_kana,:postal_code,:prefecture_id,:city,:tel,:house_code,:bulid_name)
+  end
 
 end

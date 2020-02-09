@@ -11,7 +11,7 @@
     .header-list
       .header-list__right
         .container
-          = link_to user_path(current_user.id), class: "bnt-massage" do
+          = link_to account_path(current_user.id), class: "bnt-massage" do
             Mypage
             %span マイページ
           %a.bnt-massage{:href => "/posts/new"}
