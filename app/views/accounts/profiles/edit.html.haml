@@ -1,5 +1,4 @@
 .registration-form
-  -# = form_with(model: @profile, url: account_profile_path, method: :put, local: true) do |f|
   = form_for @user, url: account_profile_path, method: :put do |f|
     .registration-form__container
       .registration-form__container__title
@@ -10,12 +9,7 @@
         = label :email, 'メールアドレス'
       = f.text_field :email, placeholder: 'PC・携帯どちらでも可'
     
-    
     = fields_for @profile, url: account_profile_path, method: :put do |p|
-    
-    
-    
-    
       .registration-form__container
         .signup-form__container__title
           = label :name, 'お名前(全角)', class: 'signup-label'
@@ -25,8 +19,6 @@
         .registration-form__container__title
           = p.text_field :family_name_kana
           = p.text_field :personal_name_kana
-
-      
 
       .phone
         = p.label :tel, "電話番号"
