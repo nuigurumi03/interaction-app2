@@ -4,21 +4,13 @@ Rails.application.routes.draw do
     resources :profiles, only: [:edit, :update], module: "accounts"
   end
 
-  devise_for :users, controllers: {
-    sessions:      'users/sessions',
-    passwords:     'users/passwords',
-    registrations: 'users/registrations'
-  }
-  # get 'users/show', to: 'user#show'
-  
+  devise_for :users
 
   devise_scope :user do
     get 'login', to: 'devise/sessions#new'
     post 'login', to: 'devise/sessions#create'
     delete 'destroy', to: 'devise/sessions#destroy',as: :current_user_destroy
   end
-
-  resources :users
   
   root 'posts#index'
   
