@@ -13,12 +13,22 @@
 ## インストールの手順
 ### $ git clone https://github.com/nuigurumi03/interaction-app2.git
 
-## 開発環境
+## 開発環境/ツール
+### フレームワーク
 - Ruby on Rails
+### 言語
 - ruby
 - haml
 - sass
 - JavaScript
+### OS
+- mac Catalina
+### DB
+- mysql
+### サーバー
+#### aws
+- EC2
+- S3
 
 ## DB設計
 ### usersテーブル
