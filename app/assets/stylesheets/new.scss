@@ -88,7 +88,6 @@ p {
   width: 100%;
 }
 
-
 pre {
   cursor: pointer;
   white-space: pre-wrap;
@@ -148,22 +147,66 @@ pre {
   width: 690px;
   margin: 0 auto;
   display: block;
+  margin-top: 40px;
   background-color: mediumturquoise;
-  opacity: 0.8;
   padding-bottom: 40px;
   text-align: center;
   .post-show {
-    padding: 32px 16px;
+    padding: 32px 16px 16px;
     font-size: 22px;
     display: block;
     text-align: center;
     font-weight: bold;
   }
+  .show-btn{
+    display: flex;
+    float: right;
+    padding-bottom: 20px;
+    padding-right: 10px;
+    .show-edit {
+      text-align: right;
+      .show-edit-btn {
+        display: inline-block;
+        min-width: 90px;
+        text-align: center;
+        background-color: #000;
+        font-size: 14px;
+        color: #FFF;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 10px 16px 10px 10px;
+        border: 1px solid #FFF;
+        margin-right: 3px;
+      }
+    }
+    .show-delete {
+      text-align: right;
+      .show-delete-btn {
+        display: inline-block;
+        min-width: 90px;
+        text-align: center;
+        background-color: #000;
+        font-size: 14px;
+        color: #FFF;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 10px 16px 10px 10px;
+        border: 1px solid #FFF;
+        margin-right: 3px;
+      }
+    }
+  }
+}
+
+.show-form {
+  padding-top: 20px;
 }
 
 .show-form__title {
-  padding-top: 20px;
-  padding-left: 40px;
+  // padding-top: 20px;
+  // padding-left: 40px;
+  margin-top: 10px;
+  padding: 10px 30px 20px;
   text-align: left;
   &__text {
     font-size: 16px;

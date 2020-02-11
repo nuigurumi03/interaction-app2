@@ -4,6 +4,13 @@
     %selection.main-show
       %h2.post-show
         = @posts.title
+      .show-btn
+        .show-edit
+          = link_to edit_post_path(@posts.id), class: "show-edit-btn" do
+            edit    
+        .show-delete
+          = link_to edit_post_path(@posts.id), class: "show-delete-btn" do
+            delete
       .show-form
         .show-form__upload
           = image_tag @image.image.to_s
@@ -58,3 +65,5 @@
                     %span :
                   .message__title__message
                     = message.message
+        
+        
