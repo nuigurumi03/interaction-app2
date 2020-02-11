@@ -70,7 +70,7 @@
 .signup-index {
   background-color: turquoise;
   height: 100vh;
-  position: relative;
+  
   &__wrapper {
     background-color: skyblue;
     width: 650px;
@@ -78,6 +78,7 @@
     padding: 40px;
     margin: auto;
     text-align: center;
+    position: relative;
     &__content {
       padding-top: 20px;
       font-size: 20px;
@@ -85,6 +86,8 @@
       font-weight: bold;
     }
     &__link {
+      
+      display: block;
       text-align: center;
       line-height: 50px;
       width: 250px;
@@ -93,7 +96,7 @@
       background-color: red;
       position: absolute;
       top: 150px;
-      left: 600px;
+      left: 240px;
       cursor: pointer;
     }
   }
