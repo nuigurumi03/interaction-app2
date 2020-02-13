@@ -69,6 +69,7 @@ gem 'active_hash'
 gem 'dotenv-rails'
 gem 'kaminari', '~> 0.17.0'
 gem 'fog-aws'
+gem 'rails-i18n'
 
 group :development, :test do
   gem 'capistrano'

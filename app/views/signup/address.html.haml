@@ -6,6 +6,7 @@
         住所入力
       .signup-address__wrapper__form
         = form_for @profile, url: address_signup_index_path,method: :post do |f|
+          = render 'layouts/error_messages', model: f.object
           .signup-address__wrapper__form__list
             .signup-address__wrapper__form__list__title
               = f.label :postal_code, "郵便番号"

@@ -6,5 +6,6 @@
         = label :nickname, '携帯電話の番号', class: "phone-number__form__title"
         %br
         = f.text_field :tel, placeholder: '携帯電話の番号を入力', class: "phone-number__form__field"
+        = render 'layouts/error_messages', model: f.object
         %br
         = f.submit '次へ進む', class:"phone-number__form__btn"
