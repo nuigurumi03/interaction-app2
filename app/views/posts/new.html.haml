@@ -7,6 +7,7 @@
           投稿内容を入力
         .post-form
           .post-form__upload
+            = render 'layouts/error_messages', model: f.object
             %h3.post-form__upload__image
               画像
               %span.require 必須

@@ -4,6 +4,7 @@ ja:
     models:
       user: ユーザー
       profile: プロフィール
+      post: 投稿
     attributes:
       user:
         nickname: ニックネーム
@@ -17,6 +18,13 @@ ja:
         birthday: 誕生日(日)
         tel: 携帯電話番号
         postal_code: 郵便番号
+        prefecture_id: 都道府県
+        city: 市区町村
+        house_code: 番地
+        bulid_name: 建物名
+      post:
+        title: タイトル
+        detail: 詳しい内容
         prefecture_id: 都道府県
         city: 市区町村
         house_code: 番地
