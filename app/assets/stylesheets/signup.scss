@@ -104,12 +104,13 @@
 
 .signup-container {
   background-color: turquoise;
-  height: 100vh;
+  padding-bottom: 40px;
+  // height: 100vh;
   .signup-wrapper {
     background-color: skyblue;
     width: 650px;
     padding: 40px;
-    margin: auto;
+    margin: 0 auto 40px;
     .registration-title {
       font-size: 20px;
       text-align: center;

@@ -16,7 +16,7 @@ class Profile < ApplicationRecord
   validates :birthday,                presence: true
 
   # sms
-  validates :tel,                                     length: {maximum: 100}
+  validates :tel,                     presence: true, length: {maximum: 100}
 
   # address
   validates :postal_code,             presence: true, length: {maximum: 100}, format: { with: POSTAL_CODE_VALID }

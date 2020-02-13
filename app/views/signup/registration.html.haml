@@ -6,6 +6,7 @@
       会員情報入力
     .registration-form
       = form_for @user, url: registration_signup_index_path, method: :post do |f|
+        = render 'layouts/error_messages', model: f.object
         .registration-form__container
           .registration-form__container__title
             = label :nickname, 'ニックネーム', class: 'signup-label'
