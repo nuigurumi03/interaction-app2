@@ -1,9 +1,9 @@
 .login {
-  background-color: turquoise;
+  background-color: #EEEEEE;
   height: 100vh;
   padding-top: 80px;
   .login-wrapper {
-    background-color: skyblue;
+    background-color: #ADD8E6;
     width: 500px;
     height: 350px;
     padding: 40px;
@@ -28,8 +28,9 @@
       &__login {
         width: 250px;
         height: 50px;
-        color: wheat;
-        background-color: red;
+        color: black;
+        background-color: turquoise;
+        border: solid gray;
         margin: 20px auto;
         cursor: pointer;
       }
