@@ -24,23 +24,13 @@
       - else
         .content__main__text
           = @search_params
-          .content__main__search-text
-            の検索結果
+          の検索結果
         .content__main__unit
           = @count
+          件見つかりました
         .content__main__unit
           - @posts.each do |post|
             .content__main__unit__image
             = link_to post_path(post.id) do
-              = image_tag post.images[0].image.to_s
+              = image_tag post.images[0].image.to_s, size: "400x280"
               %br= post.title
-        -# %ul.posts
-        -#   - @posts.each do |post|
-        -#     .content__main__unit__image
-        -#     = link_to post_path(post.id) do
-        -#       - if post.images.empty?
-        -#         画像がありません
-        -#       - else
-        -#         = image_tag post.images[0].image.to_s
-        -#       %br= post.title
-        -# = paginate @posts

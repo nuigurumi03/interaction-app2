@@ -50,8 +50,6 @@ class PostsController < ApplicationController
     @search_params = params[:keyword]
     @posts = Post.search(@search_params).order("created_at DESC")
     @count = @posts.count
-    # @posts = Post.all.order("created_at DESC")
-    # @posts = Post.page(params[:page]).per(6).order('created_at DESC')
   end
 
   private

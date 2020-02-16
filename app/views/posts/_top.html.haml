@@ -10,7 +10,7 @@
               - if post.images.empty?
                 画像がありません
               - else
-                = image_tag post.images[0].image.to_s
+                = image_tag post.images[0].image.to_s, size: "400x280"
               %br= post.title
         = paginate @posts
 - else

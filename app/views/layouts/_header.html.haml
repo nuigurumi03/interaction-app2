@@ -5,12 +5,10 @@
         = link_to root_path, class: "header-inner__logo" do
           Interaction
       .header-inner__search
-        -# = form_for to_s do |f|
         = form_with(url: search_posts_path, local: true, method: :get) do |f|
           = f.text_field :keyword, value: @search_params, placeholder:"何かお探しですか？", id:"field"
-          %button
+          %button.btn
             %i.fas.fa-search
-          -# = f.button icon("fa", "search", class:"icon"), class:"btn"
     .header-list
       .header-list__right
         .container
@@ -25,7 +23,6 @@
             %span ログアウト
             
             -# ログイン状態
-
   - else
     .header-inner
       .header-inner__logo
