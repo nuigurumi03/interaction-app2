@@ -27,6 +27,9 @@ Rails.application.routes.draw do
   end
 
   resources :posts do
+    collection do
+      get 'search'
+    end
     resources :messages
   end
 

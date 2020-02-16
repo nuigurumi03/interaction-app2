@@ -1,0 +1,46 @@
+.wrapper
+  = render "/layouts/header"
+  .content
+    .content__main
+      - if @search_params.empty?
+        .content__main__text
+          新着一覧
+        .content__main__unit
+          - @posts.each do |post|
+            .content__main__unit__image
+              = link_to post_path(post.id) do
+                - if post.images.empty?
+                  画像がありません
+                - else
+                  = image_tag post.images[0].image.to_s
+                %br= post.title
+      - elsif @search_params.present? && @count == 0
+        .content__main__text
+          = @search_params
+          .content__main__search-text
+            の検索結果
+        .content__main__unit
+          該当する投稿が見つかりません。検索条件を変えて、再度お試しください。
+      - else
+        .content__main__text
+          = @search_params
+          .content__main__search-text
+            の検索結果
+        .content__main__unit
+          = @count
+        .content__main__unit
+          - @posts.each do |post|
+            .content__main__unit__image
+            = link_to post_path(post.id) do
+              = image_tag post.images[0].image.to_s
+              %br= post.title
+        -# %ul.posts
+        -#   - @posts.each do |post|
+        -#     .content__main__unit__image
+        -#     = link_to post_path(post.id) do
+        -#       - if post.images.empty?
+        -#         画像がありません
+        -#       - else
+        -#         = image_tag post.images[0].image.to_s
+        -#       %br= post.title
+        -# = paginate @posts
