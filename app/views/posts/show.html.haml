@@ -1,20 +1,13 @@
 .wrapper
   = render "/layouts/header"
-  .main
+  .show
     %selection.main-show
       %h2.post-show
         = @posts.title
-      - if user_signed_in? && current_user.id == @posts.user_id
-        .show-btn
-          .show-edit
-            = link_to edit_post_path(@posts.id), class: "show-edit-btn" do
-              edit    
-          .show-delete
-            = link_to post_path(@posts.id), method: :delete, class: "show-delete-btn"  do
-              delete
+      
       .show-form
         .show-form__upload
-          = image_tag @image.image.to_s
+          = image_tag @image.image.to_s, size: "350x230"
 
         .show-form__title
           .show-form__title__text 
@@ -45,26 +38,40 @@
             建物名
           .show-form__title__build
             = @posts.build_name
-
-        = form_with(model: [@posts, @message], local: true) do |f|
-          = f.text_area :message, class: "massage-area", size: "80x5", placeholder: "コメントする"
-          %span
-          .message-form
-          = f.submit "SEND", class: "message-btn"
-
-        .messages
-          .message__title
-            メッセージ一覧
-            .message__title__list
-              - @messages.each do |message|
-                - if @messages.empty?
-                  .message__title__list__none
-                    メッセージはまだありません
-                - else
-                  .message__title__nickname
-                    = message.user.nickname
-                    %span :
-                  .message__title__message
-                    = message.message
+      
+    .show-messages
+      .show-header
+        .show-header__title
+          投稿者：
+        .show-header__name
+          = @posts.user.nickname
+        - if user_signed_in? && current_user.id == @posts.user_id
+          .show-btn
+            .show-edit
+              = link_to edit_post_path(@posts.id), class: "show-edit-btn" do
+                edit    
+            .show-delete
+              = link_to post_path(@posts.id), method: :delete, class: "show-delete-btn"  do
+                delete
+      .messages
+        .message__title
+          メッセージ一覧
+          .message__title__list
+            - @messages.each do |message|
+              - if @messages.empty?
+                .message__title__list__none
+                  メッセージはまだありません
+              - else
+                .message__title__nickname
+                  = message.user.nickname
+                  %span :
+                .message__title__message
+                  = message.message
+      = form_with(model: [@posts, @message], local: true) do |f|
+        = f.text_area :message, class: "massage-area", size: "100x3", placeholder: "コメントする"
+        %span
+        .message-form
+        = f.submit "SEND", class: "message-btn"
+      
         
         
