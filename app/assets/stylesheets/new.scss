@@ -144,13 +144,15 @@ pre {
 
 .show {
   padding-top: 80px;
-  background-color: turquoise;
+  // background-color: turquoise;
+  background-color: whitesmoke;
   height: 710px;
   .main-show {
     width: 450px;
     height: 620px;
     float: left;
     background-color: skyblue;
+    border: solid grey;
     margin: 20px;
     padding: 20px;
     .post-show {
@@ -217,6 +219,7 @@ pre {
 
 .show-messages {
   background-color: skyblue;
+  border: solid grey;
   margin-left: 550px;
   margin-right: 20px;
   margin-top: 20px;
@@ -244,9 +247,9 @@ pre {
 }
 
 .messages {
-  background-color: aquamarine;
+  background-color: silver;
   padding-bottom: 5px;
-  border: solid black;
+  border: solid grey;
   margin-top: 20px;
 }
 
@@ -254,12 +257,20 @@ pre {
   padding-top: 10px;
 }
 
+.message__title__name {
+  padding: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  font-family: fantasy;
+}
+
 .message__title__list {
-  height: 400px;
+  height: 390px;
   background-color: azure;
   padding: 10px;
   margin: 10px;
-  border: solid black;
+  border: solid grey;
   overflow: scroll;
 }
 
@@ -284,7 +295,7 @@ pre {
   background-color: red;
   margin: 0 auto;
   margin-top: 10px;
-  margin-left: 10px;
+  margin-left: 5px;
 
 }
 
@@ -366,56 +377,56 @@ pre {
 //   border: solid #ccc;
 // }
 
-// #img_field {
-//   font-size: 15px;
-//   margin-top: 10px;
-//   padding: 5px 8px;
-//   border: solid 1px #EDBC6C;
-//   color: #666;
-//   position: relative;
-//   padding: 0;
-//   border-radius: 5px;
-//   cursor: pointer;
-//   width: 400px;
-//   height: 250px;
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   background-size: contain;
-//   background-color: #fff;
-//   overflow: hidden;
-//   box-sizing: border-box;
-//   transition: 0.3s ease-out;
-// }
+#img_field {
+  font-size: 15px;
+  margin-top: 10px;
+  padding: 5px 8px;
+  border: solid 1px #EDBC6C;
+  color: #666;
+  position: relative;
+  padding: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 400px;
+  height: 250px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: 0.3s ease-out;
+}
 
-// #img_field i {
-//   font-size: 100px;
-//   color: #aaa;
-//   line-height: 250px;
-//   transition: 0.3s ease-out;
-//   position: absolute;
-//   left: 150px
-// }
+#img_field i {
+  font-size: 100px;
+  color: #aaa;
+  line-height: 250px;
+  transition: 0.3s ease-out;
+  position: absolute;
+  left: 150px
+}
 
-// #img_field i.add {
-//   display: none;
-//   font-size: 50px;
-//   position: absolute;
-//   top: -90px;
-//   left: 180px;
+#img_field i.add {
+  display: none;
+  font-size: 50px;
+  position: absolute;
+  top: -90px;
+  left: 180px;
 
-// }
+}
 
-// #img_field:hover {
-//   background-color: #EDBC6C;
-//   transition: 0.3s ease-out;
-//   opacity: 0.9;
-// }
+#img_field:hover {
+  background-color: #EDBC6C;
+  transition: 0.3s ease-out;
+  opacity: 0.9;
+}
 
-// #img_field:hover i {
-//   transition: 0.3s ease-out;
-//   display: block;
-//   color: #fff;
-// }
+#img_field:hover i {
+  transition: 0.3s ease-out;
+  display: block;
+  color: #fff;
+}
 
 // .massage-area {
 //   margin-top: 20px;

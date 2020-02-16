@@ -55,7 +55,8 @@
                 delete
       .messages
         .message__title
-          メッセージ一覧
+          .message__title__name
+            Message
           .message__title__list
             - @messages.each do |message|
               - if @messages.empty?
@@ -68,7 +69,7 @@
                 .message__title__message
                   = message.message
       = form_with(model: [@posts, @message], local: true) do |f|
-        = f.text_area :message, class: "massage-area", size: "100x3", placeholder: "コメントする"
+        = f.text_area :message, class: "massage-area", size: "100x3", placeholder: ""
         %span
         .message-form
         = f.submit "SEND", class: "message-btn"
